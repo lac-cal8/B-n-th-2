@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Path</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>The Second Journey</h1>
+        <div id="hidden-message">
+            <p id="text-paragraph-1"></p>
+        </div>
+        
+        <a href="index.html" class="btn-back">Go Back</a>
+    </div>
+    <script>
+        const content1 = "The second path brings you warmth and inspiration. Keep moving forward!";
+        let i = 0;
+        function typeWriter() {
+            if (i < content1.length) {
+                document.getElementById("text-paragraph-1").innerHTML += content1.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>

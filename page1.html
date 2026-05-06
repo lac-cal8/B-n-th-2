@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Path</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>The First Journey</h1>
+        <div id="hidden-message">
+            <p id="text-paragraph-1"></p> </div>
+        
+        <a href="index.html" class="btn-back">Go Back</a>
+    </div>
+    <script>
+        const content1 = "You chose the first path. It's a journey of peace and discovery.";
+        let i = 0;
+        function typeWriter() {
+            if (i < content1.length) {
+                document.getElementById("text-paragraph-1").innerHTML += content1.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        window.onload = typeWriter; // Tự động chạy khi vừa vào trang
+    </script>
+</body>
+</html>

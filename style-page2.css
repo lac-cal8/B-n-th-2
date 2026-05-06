@@ -1,0 +1,39 @@
+/* style-page2.css */
+body {
+    background-color: #F5EBE0; /* Màu nền Latte pha chút hồng */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: #6D4C41; /* Chữ màu nâu cacao */
+}
+
+.container {
+    text-align: center;
+    background-color: #FFF5F5; /* Hồng phấn rất nhạt */
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(212, 170, 160, 0.2);
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 { color: #D4A5A5; } /* Tiêu đề màu hồng đất */
+
+#hidden-message {
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    color: #8D6E63;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #D4A5A5;
+    font-weight: bold;
+}

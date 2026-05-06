@@ -1,36 +1,40 @@
-// You can edit the English messages here
-const content1 = "Every effort you've made lately is truly appreciated. Whether today was a bit tiring or filled with joy, just embrace it gently.";
-const content2 = "We all deserve quiet moments to listen to ourselves. Wishing you a peaceful evening and the sweetest of dreams!";
-
-let i = 0;
-let j = 0;
-const speed = 50; // typing speed in milliseconds
-
-function showNextButton() {
-    document.getElementById('btn1').style.display = 'none';
-    document.getElementById('btn2').style.display = 'inline-block';
-}
-
-function startTyping() {
-    document.getElementById('btn2').style.display = 'none';
-    document.getElementById('hidden-message').style.display = 'block';
-    typeWriter1();
-}
-
-function typeWriter1() {
-    if (i < content1.length) {
-        document.getElementById("text-paragraph-1").innerHTML += content1.charAt(i);
-        i++;
-        setTimeout(typeWriter1, speed);
-    } else {
-        setTimeout(typeWriter2, 500); // Wait 0.5s before starting paragraph 2
+// Function to handle the typewriter effect
+function typeWriter(elementId, text, speed, callback) {
+    let i = 0;
+    const element = document.getElementById(elementId);
+    
+    function typing() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+        } else if (callback) {
+            // Once finished, wait a bit and start the second paragraph if it exists
+            setTimeout(callback, 500);
+        }
     }
+    typing();
 }
 
-function typeWriter2() {
-    if (j < content2.length) {
-        document.getElementById("text-paragraph-2").innerHTML += content2.charAt(j);
-        j++;
-        setTimeout(typeWriter2, speed);
+// This function runs automatically when the page is loaded
+window.onload = function() {
+    // Check which page we are currently on based on the page title or a specific element
+    const pageTitle = document.title;
+
+    if (pageTitle === "First Path") {
+        const msg1 = "You chose the first path. It's a journey of peace and discovery.";
+        const msg2 = "Take a deep breath and enjoy the tranquility of the blue ocean.";
+        
+        typeWriter("text-paragraph-1", msg1, 50, function() {
+            typeWriter("text-paragraph-2", msg2, 50);
+        });
+
+    } else if (pageTitle === "Second Path") {
+        const msg1 = "The second path brings you warmth and inspiration. Keep moving forward!";
+        const msg2 = "Let the soft pink hues remind you to be kind to yourself today.";
+        
+        typeWriter("text-paragraph-1", msg1, 50, function() {
+            typeWriter("text-paragraph-2", msg2, 50);
+        });
     }
-}
+};

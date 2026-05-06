@@ -1,0 +1,37 @@
+/* style-page1.css */
+body {
+    background-color: #E0F2F1; /* Xanh nước biển pastel cực nhạt */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: #004D40; /* Chữ màu xanh đen biển sâu */
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Trắng trong suốt nhẹ */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #B2DFDB;
+    max-width: 500px;
+    width: 90%;
+}
+
+#hidden-message {
+    margin-top: 20px;
+    text-align: left;
+    border-left: 3px solid #4DB6AC;
+    padding-left: 15px;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #00796B;
+    border-bottom: 1px solid #00796B;
+    font-size: 0.9rem;
+}
